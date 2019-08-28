@@ -3,15 +3,10 @@ A very simple, light weight PHP client for validating EU VAT numbers against the
 
 **Here's a very simple example of this client in action:**
 ```PHP
-<?php
 $vat_number = '123 4567 89'; // The VAT number you wish to lookup
 $country_code = 'GB';
 
-$api = new vatRegistration();
+$details = (new vatRegistration)->checkVat($vat_number, $country_code);
 
-// Perform our VAT number check
-$details = $api->checkVat($vat_number, $country_code);
-
-// Handle the response details array below...
-echo '<p><pre>' . print_r($details, true) . '</pre></p>'; // Simple dump to screen of the full response
+var_dump($details)
 ```
